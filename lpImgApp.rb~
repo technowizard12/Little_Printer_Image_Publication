@@ -7,6 +7,7 @@
 
 
 require 'date'
+require 'camping'
 
 #Initialize Camping application
 
