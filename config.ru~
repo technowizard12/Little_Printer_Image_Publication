@@ -1,2 +1,2 @@
 require /lpImgApp.rb
-run lpImgApp.rb
+run Rack::Adapter::Camping.new(lpImgApp)

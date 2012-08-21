@@ -10,7 +10,7 @@ require 'date'
 
 #Initialize Camping application
 
-Camping.goes :WeeklyFont
+Camping.goes :LPImgApp
 
 #currentImg is the name of the present image
 #imgHostUrl is the base url that the image is hosted at
@@ -24,7 +24,7 @@ $title = "The Weekly Font"
 $sampleImg = "sample.png"
 $iconImg = "icon.png"
 
-module WeeklyFont::Controllers
+module LPImgApp::Controllers
 
 #If the user visits the root, the application uses
 #plausible deniability. They shouldn't be there.
@@ -73,7 +73,7 @@ module WeeklyFont::Controllers
     end
 end
 
-module WeeklyFont::Views
+module LPImgApp::Views
  
 # wraps all code in the same format, with the title being the name
 #specified at the top
