@@ -72,18 +72,12 @@ module LPImgApp::Controllers
             render :icon
         end
     end
-#outputs your meta.json
+#renders your meta.json
     class MetaJson < R '/meta.json'
         def get
-            p "{
-“name”: “The Weekly Font!”,
-“description”: “Featuring beautiful, usable fonts. All free for commercial use”,
-“delivered_on”:”Mondays”
-“external_configuration”: “false”,
-“send_timezone_info”: “true”,
-“send_delivery_count”: “false”,
-}"
-end
+            p "{“name”: “The Weekly Font!”,“description”: “Featuringbeautiful, usable fonts. All free for commercial use”,“delivered_on”:”Mondays”“external_configuration”: “false”,“send_timezone_info”: “true”,“send_delivery_count”: “false”,}"
+        end
+    end
 end
 
 module LPImgApp::Views
