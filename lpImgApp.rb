@@ -74,7 +74,9 @@ module LPImgApp::Controllers
     end
 #redirects to your offsite meta.json
     class MetaJson < R '/meta.json'
-        redirect $imgHostUrl + "/meta.json"
+        def get
+        redirect "http://technowizard12.github.com/meta.json"
+        end
     end
 end
 
