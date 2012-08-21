@@ -93,10 +93,11 @@ module LPImgApp::Views
     html do
       head do
         title { $title }
-        style :type => "text/css" do
-            %[
-        body { margin: 0 }
-      ]
+            style :type => "text/css" do
+                %[
+            body { margin: 0 }
+          ]
+         end
       end
       body { self << yield }
     end

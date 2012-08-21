@@ -95,7 +95,7 @@ module LPImgApp::Views
         title { $title }
             style :type => "text/css" do
                 %[
-            body { margin: 0 }
+            body { margin: 0 } #makes sure webkit doesn't add any margins
           ]
          end
       end
