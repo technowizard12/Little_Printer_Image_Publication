@@ -1,5 +1,9 @@
-#serves an image to Little Printers on mondays.
+#lpImgApp.rb
+#
+#Serves an image to Little Printers on mondays.
 #To run, a remote image hosting server is required
+#This is so that the script may be run on heroku
+#and similar static platforms
 #
 #Author: Simon Orr
 #Version: 0.1
@@ -14,12 +18,12 @@ require 'camping'
 Camping.goes :LPImgApp
 
 #currentImg is the name of the present image
-#imgHostUrl is the base url that the image is hosted at
+#imgHostURL is the base url that the image is hosted at
 #title is the desired page title
 #sampleImg is the sample image
 #iconImg is the icon image
 
-$currentImg = "aug132012.png"
+$currentImg = "aug132012.png" 
 $imgHostURL = "http://technowizard12.github.com"
 $title = "The Weekly Font"
 $sampleImg = "sample.png"
@@ -89,6 +93,11 @@ module LPImgApp::Views
     html do
       head do
         title { $title }
+            style :type => "text/css" do
+                %[
+            body { margin: 0 }
+          ]
+         end
       end
       body { self << yield }
     end
