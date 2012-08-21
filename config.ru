@@ -1,2 +1,2 @@
-require /lpImgApp.rb
+require '/lpImgApp.rb'
 run LPImgApp
