@@ -1,5 +1,5 @@
 Little Printer Image Publication
-================================
+==============================================================================
 
 This here's an application, written in Camping, to serve a specified
 image to BERG Cloud when requested for printing on a Little Printer.
@@ -9,10 +9,10 @@ can make it serve any day, or every day
 Things you'll need to use it:
 ==============
 Camping
-Ruby
-A remote image server (Github pages works swell)
-Your publication in image format
-Hands, or at least stumps of some sort
+, Ruby
+, A remote image server (Github pages works swell)
+, Your publication in image format
+, Hands, or at least stumps of some sort
 
 
 Configuring it:
@@ -24,7 +24,7 @@ $currentImg
 The filename including extension of the image you want to serve
 when the server requests an edition
 
-$mgHostUrl
+$imgHostUrl
 ===
 The base url where the image lives. e.g. http://yourname.github.com
 
@@ -45,3 +45,16 @@ the name of the icon image
 Deploying should be easy. Everything's set up for Heroku, but
 you can change that, if you like. Heroku's kind of annoying,
 sometimes.
+
+
+
+Configuring
+=================================================================
+
+1. Install ruby, camping, and markaby. Fill out your global variables.
+
+2. Place the images to be served in the root of your remote server.
+
+3. Profit!
+
+(4. You might want to read the comments of the code, just until I get proper docs up)
