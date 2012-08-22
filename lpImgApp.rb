@@ -54,7 +54,7 @@ module LPImgApp::Controllers
             if userDate.monday? == true #change to .tuesday? etc, depending on the desired day
                 render :currentEdition
             else
-                r(200)
+                r(200, "Nothing to report, boss.")
             end
         end
         end
