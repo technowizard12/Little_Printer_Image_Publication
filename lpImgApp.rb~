@@ -23,7 +23,7 @@ Camping.goes :LPImgApp
 #sampleImg is the sample image
 #iconImg is the icon image
 
-$currentImg = "aug132012.png" 
+$imgFileExtension = ".png"
 $imgHostURL = "http://technowizard12.github.com"
 $title = "The Weekly Font"
 $sampleImg = "sample.png"
@@ -46,15 +46,18 @@ module LPImgApp::Controllers
 
     class Edition < R '/edition/'
         def get
+        
+        @passedLDT = @input.local_delivery_time
+        
 	if @input.any? == false
             r(400, "No local_delivery_time. This is not the page you are looking for. Move along.")
         else
             userDate = Date.new
-            userDate = Time.parse(@input.local_delivery_time)
+            userDate = Time.parse(@passedLDT)
             if userDate.monday? == true #change to .tuesday? etc, depending on the desired day
                 render :currentEdition
             else
-                r(200)
+                r(200, "Error 200. Nothing to report, boss")
             end
         end
         end
@@ -95,7 +98,7 @@ module LPImgApp::Views
         title { $title }
             style :type => "text/css" do
                 %[
-            body { margin: 0 }
+            body { margin: 0 } #makes sure webkit doesn't add any margins
           ]
          end
       end
@@ -106,7 +109,8 @@ module LPImgApp::Views
 #View for the current edition
 
   def currentEdition
-    img :src => $imgHostURL + "/" + $currentImg
+    @parsedLDT = Date.parse(@passedLDT)
+    img :src => $imgHostURL + "/" + @parsedLDT.to_s + $imgFileExtension
   end
 
 #View for the sample
